@@ -1,4 +1,4 @@
-```py
+
 import random
 print("""WELCOME WELCOME, This is rock, paper, scissors please select a letter to play!
 type help for input options""")
@@ -52,5 +52,3 @@ while True:
     if player_choice.lower() == "quit":
         print("Thank you for playing.")
         break
-
-```
