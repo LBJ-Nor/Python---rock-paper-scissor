@@ -14,9 +14,11 @@ type quit to end
 """
 
 
-def game_rules():
-    global player_score
-    global npc_score
+
+
+while True:
+    player_choice = input("R, P, S?: ").upper()
+    npc_choice = (random.choice(choices))
     if player_choice + npc_choice in w_outcome:
         player_score += 1
         print("You chose:", player_choice, "Computer chose:", npc_choice)
@@ -33,12 +35,7 @@ def game_rules():
         print("Player score:", player_score, "NPC score:", npc_score)
     elif player_choice not in choices:
         print("Please enter R, P, or S for Rock, Paper or Scissor")
-
-
-while True:
-    player_choice = input("R, P, S?: ").upper()
-    npc_choice = (random.choice(choices))
-    game_rules()
+        
     if player_choice == "HELP":
         print(help_text)
     if player_choice == "QUIT":
