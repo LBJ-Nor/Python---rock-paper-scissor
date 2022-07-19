@@ -14,30 +14,31 @@ type quit to end
 """
 
 
-
-
 while True:
+
     player_choice = input("R, P, S?: ").upper()
     npc_choice = (random.choice(choices))
-    if player_choice + npc_choice in w_outcome:
-        player_score += 1
-        print("You chose:", player_choice, "Computer chose:", npc_choice)
-        print("You win")
-        print("Player score:", player_score, "NPC score:", npc_score)
-    elif npc_choice == player_choice:
-        print("You chose:", player_choice, "Computer chose:", npc_choice)
-        print("It`s a draw")
-        print("Player score:", player_score, "NPC score:", npc_score)
-    elif npc_choice + player_choice in w_outcome:
-        npc_score += 1
-        print("You chose:", player_choice, "Computer chose:", npc_choice)
-        print("You lose")
-        print("Player score:", player_score, "NPC score:", npc_score)
-    elif player_choice not in choices:
-        print("Please enter R, P, or S for Rock, Paper or Scissor")
-        
+
     if player_choice == "HELP":
         print(help_text)
-    if player_choice == "QUIT":
+        
+    elif player_choice == "QUIT":
         print("Thank you for playing.")
         break
+    
+    elif player_choice not in choices:
+        print("Please enter R, P, or S for Rock, Paper or Scissor")
+
+    else:
+        print("You chose:", player_choice, "Computer chose:", npc_choice)
+        
+        if player_choice + npc_choice in w_outcome:
+            player_score += 1
+            print("You win")
+        if npc_choice == player_choice:
+            print("It`s a draw")
+        if npc_choice + player_choice in w_outcome:
+            npc_score += 1
+            print("You lose")
+
+        print("Player score:", player_score, "NPC score:", npc_score)
